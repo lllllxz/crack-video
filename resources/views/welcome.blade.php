@@ -74,6 +74,16 @@
             </div>
         </div>
     <script>
+        $(function () {
+            $("#url").on('input propertychange', function () {
+                var vip_url = $("#url").val()
+                if (vip_url.length==0){
+                    $("#video_url").html('');
+                }
+            })
+
+        })
+
         $("#submit").on('click',function () {
             var val = $("#url").val();
             var tar_url = BASE64.encode("https://wn.run/"+val);
@@ -107,6 +117,8 @@
                 }
             })
         })
+
+
     </script>
     </body>
 </html>
